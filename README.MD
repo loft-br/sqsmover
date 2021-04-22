@@ -1,5 +1,5 @@
 # SQS Message Mover
-[![Go Report Card](https://goreportcard.com/badge/github.com/mercury2269/sqsmover)](https://goreportcard.com/report/github.com/mercury2269/sqsmover) ![GitHub](https://img.shields.io/github/license/mercury2269/sqsmover)
+# This repo is a fork from https://github.com/mercury2269/sqsmover
 
 `sqsmover` is a tool for moving AWS SQS messages from one queue to another. Useful when you need to move deadletter queue messages back into the original queue.
 
@@ -19,48 +19,19 @@
 
 ## Installing
 
-SQS Mover is pre-compiled for macOS, Linux, Windows and does not require additional dependencies. You can install
-the pre-compiled binary (in several different ways) or compile from source.
-
-**homebrew tap** (only on macOS for now):
-```
-brew install mercury2269/homebrew-tap/sqsmover
-```
-
-**Chocolatey (Windows)**
-```
-choco install sqsmover
-```
-
-**Shell script:**
-
-The following script will install the binary into `/usr/local/bin`
-
-```sh
-$ curl https://raw.githubusercontent.com/mercury2269/sqsmover/master/install.sh | sh
-```
-
-Note that you may need to run the `sudo` version below, or alternatively chown `/usr/local/bin`:
-```sh
-$ curl https://raw.githubusercontent.com/mercury2269/sqsmover/master/install.sh | sudo sh
-```
+To install this lib you need to download the source code.
 
 **From Source**
 
 Download:
 ```sh
-git clone git@github.com:mercury2269/sqsmover.git && cd sqsmover
+git clone git@github.com:loftbr/sqsmover.git && cd sqsmover
 ```
 
 Run:
 ```sh
-AWS_PROFILE=nbos-ris AWS_REGION=us-west-2 go run main.go --source transactions-dlq --destination transactions
+AWS_PROFILE=nbos-ris AWS_REGION=us-west-2 go run -mod vendor main.go --source transactions-dlq --destination transactions
 ```
-
-**Manually**:
-
-Download the pre-compiled binary from the [releases page](https://github.com/mercury2269/sqsmover/releases) and
-copy to the desired location.
 
 ## Set up AWS credentials 
 
@@ -158,7 +129,7 @@ You will need to have [Golang installed](https://golang.org/doc/install).
 
 ```sh
 # clone it outside GOPATH
-git clone https://github.com/mercury2269/sqsmover
+git clone https://github.com/loftbr/sqsmover
 cd sqsmover
 
 # get dependencies using go modules (needs go 1.11+)
