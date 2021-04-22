@@ -67,7 +67,7 @@ func main() {
 	sourceQueueUrl, err := resolveQueueUrl(svc, *sourceQueue)
 
 	if err != nil {
-		logAwsError("Failed to resolve source queue", err)
+		logAwsError("Failed to resolve source queue " + sourceQueueUrl, err)
 		return
 	}
 
@@ -76,7 +76,7 @@ func main() {
 	destinationQueueUrl, err := resolveQueueUrl(svc, *destinationQueue)
 
 	if err != nil {
-		logAwsError("Failed to resolve destination queue", err)
+		logAwsError("Failed to resolve destination queue " + destinationQueueUrl, err)
 		return
 	}
 
