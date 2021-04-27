@@ -27,7 +27,7 @@ var (
 var (
 	sourceQueue      = kingpin.Flag("source", "The source queue name to move messages from.").Short('s').Required().String()
 	destinationQueue = kingpin.Flag("destination", "The destination queue name to move messages to.").Short('d').Required().String()
-	region           = kingpin.Flag("region", "The AWS region for source and destination queues.").Short('r').Default("").String()
+	region           = kingpin.Flag("region", "The AWS region for source and destination queues.").Short('r').Default("us-east-1").String()
 	profile          = kingpin.Flag("profile", "Use a specific profile from AWS credentials file.").Short('p').String()
 	limit            = kingpin.Flag("limit", "Limits total number of messages moved. No limit is set by default.").Short('l').Default("0").Int()
 	maxBatchSize     = kingpin.Flag("batch", "The maximum number of messages to move at a time").Short('b').Default("10").Int64()

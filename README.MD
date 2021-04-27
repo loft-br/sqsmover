@@ -30,7 +30,7 @@ git clone git@github.com:loftbr/sqsmover.git && cd sqsmover
 
 Run:
 ```sh
-AWS_PROFILE=nbos-ris AWS_REGION=us-west-2 go run -mod vendor main.go --source transactions-dlq --destination transactions
+AWS_PROFILE=nbos-ris AWS_REGION=us-east-1 go run -mod vendor main.go --source transactions-dlq --destination transactions
 ```
 
 ## Set up AWS credentials 
@@ -52,7 +52,7 @@ The [default] heading defines credentials for the default profile, which the SQS
 Optionally you can configure default region in `~/.aws/config`
 ```
 [default]
-region=us-west-2
+region=us-east-1
 ```
 
 ### Option 2: Environment variables
@@ -86,7 +86,7 @@ Flags:
                                  --help-long and --help-man).
   -s, --source=SOURCE            The source queue name to move messages from.
   -d, --destination=DESTINATION  The destination queue name to move messages to.
-  -r, --region="us-west-2"       The AWS region for source and destination queues.
+  -r, --region="us-east-1"       The AWS region for source and destination queues.
   -p, --profile=""               Use a specific profile from AWS credentials file.
   -l, --limit=0                  Limits total number of messages moved. No limit is set by default.
   -b, --batch=10                 The maximum number of messages to move at a time.
@@ -95,7 +95,7 @@ Flags:
 
 Examples:
 
-Region will default to `us-west-2`, you can also override it with `--region` flag
+Region will default to `us-east-1`, you can also override it with `--region` flag
 
 ```
 sqsmover --source=my_source_queue_name --destination=my_destination_queuename
